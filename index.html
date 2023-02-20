@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!---------------------------Fonts used in this App------------------------------------------------------>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!----------------------------- Config script ------------------------------->
+
+    <script src="./Assets/JS/config.js"></script>
+
+    <!--------------------------------Style Files ------------------------------------------>
+    <link
+      rel="stylesheet"
+      href="./Assets/CSS/bootstrap.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./Assets/CSS/all.min.css" type="text/css" />
+    <link rel="stylesheet" href="./Assets/CSS/style.css" type="text/css" />
+
+    <!------------------------------WebSite Title ------------------------------------------>
+
+    <title>La Temperatura App | A Template Weather App</title>
+
+    <!-------------------------------Browser logo------------------------------------------->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://image.winudf.com/v2/image1/Y29tLm1pbGxjcm9mdC5hcHAud2VhdGhlci5yYWRhci53ZWF0aGVyMjQuZm9yZWNhc3QuZnJlZV9pY29uXzE1NTU0OTM2ODhfMDkz/icon.png?w=&fakeurl=1"
+    />
+  </head>
+  <body>
+    <!-- bg-video -->
+    <div id="bgd">
+      <video id="bgdVideo" playbackrate="0.5" muted="" autoplay="" loop="">
+        <source
+          src="https://joy1.videvo.net/videvo_files/video/free/2019-12/large_watermarked/190915_B_01_Timelapse Danang_05_preview.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+
+    <!-- navbar -->
+    <nav
+      class="nav navbar navbar-expand-lg navbar-dark bg-dark my-auto px-0 py-0 fixed-top"
+    >
+      <div class="container-fluid nav__container">
+        <a class="navbar-brand d-flex align-items-center" href="/index.html">
+          <img src="./Assets/Images/logo.png" class=" " alt="webpage-logo" />
+          <div
+            class="text__container ms-3 d-flex flex-column align-items-center w-75"
+          >
+            <h2 class="logo__link my-0">Temperatura</h2>
+            <p class="small mb-0 text-muted fw-bold">Todo El Mundo</p>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-lg-auto me-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a
+                class="nav-link active me-lg-3 px-0 text-capitalize"
+                aria-current="page"
+                href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-lg-3 px-0 text-capitalize" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-lg-3 px-0 text-capitalize" href="#"
+                >Live Cameras</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-lg-3 px-0 text-capitalize" href="#"
+                >Photos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0 text-capitalize" href="#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- -----------------------------Home--------------------------------- -->
+
+    <section id="home">
+      <div
+        class="py-4 home__container d-flex flex-column justify-content-evenly align-items-center"
+      >
+        <!-- Search -->
+
+        <div class="container p-1 my-3">
+          <form class="d-flex" role="search">
+            <input
+              id="cityInput"
+              class="form-control me-2"
+              type="search"
+              placeholder="Find your location..."
+              aria-label="Search"
+            />
+            <button class="btn btn-primary" type="button" id="getCityBtn">
+              Find
+            </button>
+          </form>
+        </div>
+       
+        <!-- Weather -->
+        <div class="container p-1 my-3">
+          <div class="row g-0">
+            <div class="col-lg-4">
+              <div class="card mb-3 h-100 start__cont">
+                <div
+                  class="card-header d-flex justify-content-between align-items-center"
+                >
+                  <div class="dayName"></div>
+                  <div class="dayDate small"></div>
+                </div>
+                <div class="card-body py-4">
+                  <h5 class="card-title text-capitalize"></h5>
+                  <div
+                    class="temp__data d-flex justify-content-between align-items-center"
+                  >
+                    <h2 class="temp__value"></h2>
+                    <div>
+                      <img class="temp__icon" src="" alt="weather-icon" />
+                    </div>
+                  </div>
+
+                  <p class="card-text"></p>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between align-items-center"
+                >
+                  <div class="footerTemp__data d-flex py-2">
+                    <i class="fa-solid fa-droplet"></i>
+                    <p class="cardFooter__data ms-2 mb-0">20%</p>
+                  </div>
+                  <div class="footerTemp__data d-flex">
+                    <i class="fa-solid fa-wind"></i>
+                    <p class="cardFooter__data ms-2 mb-0"></p>
+                  </div>
+                  <div class="footerTemp__data d-flex">
+                    <i class="fa-solid fa-compass"></i>
+                    <p class="cardFooter__data ms-2 mb-0">East</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card mb-3 text-center h-100 middle__cont">
+                <div class="card-header">
+                  <div class="dayName text-center"></div>
+                </div>
+                <div class="card-body py-4">
+                  <img class="temp__icon" src="" alt="weather-icon" />
+                  <div class="temp__data">
+                    <h2 class="temp__valueMax"></h2>
+                    <h2 class="temp__valueMin"></h2>
+                  </div>
+
+                  <p class="card-text"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card mb-3 text-center h-100 end__cont">
+                <div class="card-header">
+                  <div class="dayName text-center"></div>
+                </div>
+                <div class="card-body py-4">
+                  <img class="temp__icon" src="" alt="weather-icon" />
+                  <div class="temp__data">
+                    <h2 class="temp__valueMax"></h2>
+                    <h2 class="temp__valueMin"></h2>
+                  </div>
+
+                  <p class="card-text"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subscribe -->
+        <div class="container p-1 my-3">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Enter your E-mail to subscribe..."
+              aria-label="Search"
+            />
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="copy__rights" class=" ">
+      <div
+        class="container d-lg-flex justify-content-between align-items-center"
+      >
+        <div class="socialIcons__container d-flex">
+          <div
+            class="social__icon p-2 rounded-circle me-2 d-flex justify-content-center align-items-center"
+          >
+            <a
+              href="#"
+              target="_blank"
+              style="font-family: FontAwesome"
+              class="text-reset text-decoration-none"
+              ><i class="fa-brands fa-google-plus-g fa-xl"></i
+            ></a>
+          </div>
+          <div
+            class="social__icon p-2 rounded-circle me-2 d-flex justify-content-center align-items-center"
+          >
+            <a
+              href="#"
+              target="_blank"
+              style="font-family: FontAwesome"
+              class="text-reset text-decoration-none"
+              ><i class="fa-brands fa-facebook-f fa-xl"></i
+            ></a>
+          </div>
+          <div
+            class="social__icon p-2 rounded-circle me-2 d-flex justify-content-center align-items-center"
+          >
+            <a
+              href="#"
+              target="_blank"
+              style="font-family: FontAwesome"
+              class="text-reset text-decoration-none"
+              ><i class="fa-brands fa-pinterest fa-xl"></i
+            ></a>
+          </div>
+          <div
+            class="social__icon p-2 rounded-circle me-2 d-flex justify-content-center align-items-center"
+          >
+            <a
+              href="#"
+              target="_blank"
+              style="font-family: FontAwesome"
+              class="text-reset text-decoration-none"
+              ><i class="fa-brands fa-twitter fa-xl"></i
+            ></a>
+          </div>
+        </div>
+        <p class="text-lg-start text-center mt-4 mt-lg-2">
+          Copyright 2014 La Temperatura. Designed by Themezy. All rights
+          reserved <a href="#" class="footer__link">Temperatora</a>
+        </p>
+      </div>
+    </footer>
+
+    <!----------------------------- Bootstrap script ------------------------------->
+
+    <script src="./Assets/JS/bootstrap.bundle.min.js"></script>
+
+    <!----------------------------- My script ------------------------------->
+
+    <script src="./Assets/JS/index.js"></script>
+  </body>
+</html>

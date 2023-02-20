@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --white__color: #fff;
+  --mainText__color: #222;
+  --secondText__color: rgb(0, 154, 216);
+  --black__color: #000;
+  --fontRoboto: "Roboto", sans-serif;
+
+  --location__color: #777;
+  --titleBG__color: rgba(222, 227, 228, 0.5);
+  --number__color: #6c757d;
+  --secondButton__color: #6c6c6c;
+  --secondNav__color: #7b8084;
+  --placeholder__color: #b1b4b8;
+  --secondBG__color: #f1f1f1;
+}
+
+body {
+  max-height: 100vh;
+  margin: 0;
+  font-family: var(--fontRoboto);
+}
+
+#bgd #bgdVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+video {
+  object-fit: contain;
+  /* overflow-clip-margin: content-box; */
+  overflow: clip;
+}
+
+/*******************************************NavBar Section*****************************************/
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  border: unset;
+  box-shadow: none;
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo__link {
+  font-size: 1rem;
+}
+
+.text__container p.small {
+  font-size: 0.625rem;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-item {
+  padding-block: 0;
+  font-size: 1rem;
+}
+
+.nav-item a {
+  display: inline-block;
+  position: relative;
+  font-size: 0.875rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--white__color);
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--secondText__color);
+}
+
+.nav-item > a.active::after,
+.nav-item > a::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  background: var(--secondText__color);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.nav-item > a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-item a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/**************************************************************************************************/
+
+/*******************************************Home Section*****************************************/
+
+#home{
+  padding-block: 3.75rem;
+}
+
+/*******Type************/
+.celsiusOrFahrenheit .nav-item a{
+  color:var(--mainText__color);
+  text-decoration: none;
+  transition: all 400ms linear;
+}
+
+#getCelsius:hover, #getFahrenheit:hover ,.celsiusOrFahrenheit .nav-link.active{
+  color:var(--secondText__color);
+  background-color:  #1a1a1ad7;
+}
+
+.celsiusOrFahrenheit{
+  color:var(--secondText__color);
+  text-decoration: underline;
+}
+
+
+/**Search**/
+
+.form-control{
+  color:var(--white__color);
+  border:none;
+  border-radius: 8rem;
+  background-color:  #1a1a1ad7;
+}
+
+.form-control:focus {
+  color:var(--white__color);
+  background-color: #1a1a1a80;
+  border-color:var(--mainText__color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(0  154  216 / 25%);
+}
+
+.btn{
+  border-radius: 8rem;
+}
+
+.btn-primary{
+  background-color: var(--secondText__color);
+  border-color: var(--secondText__color);
+}
+
+
+/***Weather**/
+.card{
+  background-color: #1a1a1ac4;
+  color:var(--white__color);
+  border-radius: 0.25rem 0 0 0.25rem;
+  border:none
+}
+
+.card-header{
+  background-color: #1a1a1ad7;
+}
+
+.dayName ,.dayDate, .footerTemp__data {
+  color:var( --placeholder__color);
+}
+
+.temp__value{
+  font-size: 5.25rem;
+}
+
+.card-text{
+  color:var(--secondText__color);
+}
+
+.footerTemp__data .fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas{
+line-height: unset;
+}
+
+.card-footer, .card-header{
+  border:none;
+}
+
+.temp__valueMin{
+  font-size: 1.25rem;
+}
+
+.temp__valueMax{
+  font-size: 4.25rem;
+}
+
+.middle__cont{
+  background-color: #1a1a1aec;
+  border-radius:0 ;
+}
+
+.end__cont{
+  border-radius:0  0.25rem  0.25rem 0;
+}
+
+
+/**************************************************************************************************/
+
+/*******************************************Footer Section*****************************************/
+#copy__rights {
+  padding-block: 1.5rem;
+  background-color: #1a1a1a80;
+  font-family: var(--fontRoboto);
+  font-size: 0.875rem;
+  color: var(--white__color);
+}
+
+#copy__rights p a {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--white__color);
+  text-decoration: none;
+  transition: color 400ms linear;
+}
+
+#copy__rights p a:hover {
+  color: var(--secondText__color);
+}
+
+.social__icon {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.socialIcons__container .social__icon {
+  width: 40px;
+  height: 40px;
+  transition: all 500ms ease;
+  border: 2px solid var(--mainText__color);
+  background-color: var(--mainText__color);
+}
+
+.social__icon:hover i {
+  color: var(--white__color);
+}
+
+.social__icon i {
+  color: var(--secondText__color);
+}
+
+.social__icon:hover {
+  border: 2px solid var(--secondText__color);
+  background-color: var(--secondText__color);
+}
+/********************************************************************************************/
+
+/**************************************************************************************************/
+
+/*******************************************RWD Section*****************************************/
+@media screen and (max-width: 1399.9808px) {
+}
+
+@media screen and (max-width: 1199.9808px) {
+}
+
+@media screen and (max-width: 991.9808px) {
+  /*insted of increase the height and affect the performance of the toggle animated speed, Add Padding*/
+  .nav-item {
+    /* border: 1px solid green; */
+    padding-block: 5px;
+    text-align: center;
+  }
+  .nav-item a {
+    font-size: 1rem;
+  }
+
+  .col-lg-4{
+    padding-block: 1rem;
+  }
+
+  .socialIcons__container{
+    justify-content: center;
+
+  }
+
+  .end__cont, .middle__cont, .card{
+    border-radius:  0.25rem;
+  }
+}
+
+@media screen and (max-width: 767.9808px) {
+}
+
+@media screen and (max-width: 575.9808px) {
+}
+
+@media screen and (max-width: 450.9808px) {
+}
+
+@media screen and (max-width: 425.9808px) {
+}
+
+@media screen and (max-width: 344.9808px) {
+}
+/**************************************************************************************************/
