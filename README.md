@@ -1,4 +1,4 @@
-#La Temperatura App
+# La Temperatura App
 
 This is a simple website to Get Data about Current Weather; including Current Temperature, Humidity, Wind Speed & Direction. Also, a search bar was added in order to allow the user to search for specific city on WeatherAPI DB. This project was created with React hooks, and using [Free Weather API - weatherAPI.com](https://www.weatherapi.com) for fetching user's requirment and get it's corresponding data.
 
