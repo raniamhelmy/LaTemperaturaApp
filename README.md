@@ -8,7 +8,7 @@ This is a simple website to Get Data about Current Weather; including Current Te
 
 ## ScreenShot
 
-![LaTepmeraturaApp](https://user-images.githubusercontent.com/93358372/220055289-e1a1deaf-d65a-46f9-864c-06882f844539.jpg)
+![La-Temperatura-App](https://user-images.githubusercontent.com/93358372/220065852-afca76ef-45ae-47e2-801c-83643ff95015.jpg)
 
 
 ### Technologies used to build this project
